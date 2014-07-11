@@ -77,7 +77,7 @@ static AppConfig *_sharedInstance = nil;
 	[AppConfig save];
 }
 
-+(instancetype)objectForKey:(NSString*)key{
++(id)objectForKey:(NSString*)key{
 	AppConfig* conf = [AppConfig sharedInstance];
 	return  [conf.configDictionary objectForKey:key];
 }
