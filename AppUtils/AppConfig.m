@@ -6,27 +6,27 @@
 //  Copyright (c) 2014 Graham Oldfield. All rights reserved.
 //
 
-#import "Config.h"
+#import "AppConfig.h"
 #import "AppUtils.h"
 
-static Config *_sharedInstance = nil;
+static AppConfig *_sharedInstance = nil;
 
-@interface Config()<NSCoding>
+@interface AppConfig()<NSCoding>
 @property (strong ,nonatomic) NSMutableDictionary* configDictionary;
 
 @end
 
-@implementation Config
+@implementation AppConfig
 
 + (instancetype) sharedInstance{
     static dispatch_once_t oncePredicate;
     dispatch_once(&oncePredicate, ^{
-		NSData * data = [NSData dataWithContentsOfFile:[Config configPath]];
+		NSData * data = [NSData dataWithContentsOfFile:[AppConfig configPath]];
 		if(data!=nil){
 			_sharedInstance = [NSKeyedUnarchiver unarchiveObjectWithData:data];
 		}
 		else{
-			_sharedInstance = [Config alloc];
+			_sharedInstance = [AppConfig alloc];
 		}
 		
     });
@@ -62,28 +62,28 @@ static Config *_sharedInstance = nil;
 }
 
 +(void)removeObjectforKey:(NSString*)aKey{
-	[[Config sharedInstance].configDictionary removeObjectForKey:aKey];
-	[Config save];
+	[[AppConfig sharedInstance].configDictionary removeObjectForKey:aKey];
+	[AppConfig save];
 }
 
 +(void)removeAllObjects{
-	[[Config sharedInstance].configDictionary removeAllObjects];
-	[Config save];
+	[[AppConfig sharedInstance].configDictionary removeAllObjects];
+	[AppConfig save];
 }
 
 +(void)setObject:(id)anObject forKey:(NSString*)aKey{
-	Config* conf = [Config sharedInstance];
+	AppConfig* conf = [AppConfig sharedInstance];
 	[conf.configDictionary  setObject:anObject forKey:aKey];
-	[Config save];
+	[AppConfig save];
 }
 
 +(instancetype)objectForKey:(NSString*)key{
-	Config* conf = [Config sharedInstance];
+	AppConfig* conf = [AppConfig sharedInstance];
 	return  [conf.configDictionary objectForKey:key];
 }
 
 +(void)save{
-	Boolean saved = [NSKeyedArchiver archiveRootObject:[Config sharedInstance] toFile:[Config configPath]];
+	Boolean saved = [NSKeyedArchiver archiveRootObject:[AppConfig sharedInstance] toFile:[AppConfig configPath]];
 	NSLog(@"Config save: %d",saved);
 }
 

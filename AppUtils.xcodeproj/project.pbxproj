@@ -16,7 +16,7 @@
 		81C1C67B196FD80C009AA1D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81C1C679196FD80C009AA1D5 /* InfoPlist.strings */; };
 		81C1C687196FD8B0009AA1D5 /* AppUtils.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 81C1C686196FD8B0009AA1D5 /* AppUtils.podspec */; };
 		81C1C68A196FD93C009AA1D5 /* AppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C1C689196FD93C009AA1D5 /* AppUtils.m */; };
-		81C1C68D196FD9DE009AA1D5 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C1C68C196FD9DE009AA1D5 /* Config.m */; };
+		81C1C68D196FD9DE009AA1D5 /* AppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C1C68C196FD9DE009AA1D5 /* AppConfig.m */; };
 		81C1C691196FF073009AA1D5 /* ConfigTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C1C690196FF073009AA1D5 /* ConfigTests.m */; };
 		81C1C693196FF487009AA1D5 /* UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C1C692196FF487009AA1D5 /* UtilsTest.m */; };
 		81C1C695196FFCD5009AA1D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C1C694196FFCD5009AA1D5 /* UIKit.framework */; };
@@ -58,8 +58,8 @@
 		81C1C686196FD8B0009AA1D5 /* AppUtils.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppUtils.podspec; sourceTree = SOURCE_ROOT; };
 		81C1C688196FD93C009AA1D5 /* AppUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtils.h; sourceTree = "<group>"; };
 		81C1C689196FD93C009AA1D5 /* AppUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtils.m; sourceTree = "<group>"; };
-		81C1C68B196FD9DD009AA1D5 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
-		81C1C68C196FD9DE009AA1D5 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
+		81C1C68B196FD9DD009AA1D5 /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
+		81C1C68C196FD9DE009AA1D5 /* AppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfig.m; sourceTree = "<group>"; };
 		81C1C690196FF073009AA1D5 /* ConfigTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigTests.m; sourceTree = "<group>"; };
 		81C1C692196FF487009AA1D5 /* UtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilsTest.m; sourceTree = "<group>"; };
 		81C1C694196FFCD5009AA1D5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -141,8 +141,8 @@
 			children = (
 				81C1C688196FD93C009AA1D5 /* AppUtils.h */,
 				81C1C689196FD93C009AA1D5 /* AppUtils.m */,
-				81C1C68B196FD9DD009AA1D5 /* Config.h */,
-				81C1C68C196FD9DE009AA1D5 /* Config.m */,
+				81C1C68B196FD9DD009AA1D5 /* AppConfig.h */,
+				81C1C68C196FD9DE009AA1D5 /* AppConfig.m */,
 				81C1C663196FD80C009AA1D5 /* Supporting Files */,
 			);
 			path = AppUtils;
@@ -326,7 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81C1C68D196FD9DE009AA1D5 /* Config.m in Sources */,
+				81C1C68D196FD9DE009AA1D5 /* AppConfig.m in Sources */,
 				81C1C68A196FD93C009AA1D5 /* AppUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

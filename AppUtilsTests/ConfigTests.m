@@ -11,7 +11,7 @@
 #define EXP_SHORTHAND
 #import "Expecta.h"
 
-#import "Config.h"
+#import "AppConfig.h"
 
 SpecBegin(ConfigTests)
 
@@ -31,26 +31,26 @@ describe(@"Config Test", ^{
 	});
 	
 	it(@"init", ^{
-		Config* config = [Config sharedInstance];
+		AppConfig* config = [AppConfig sharedInstance];
 		expect(config).toNot.beNil();
 	});
 
 	it(@"save", ^{
-		[Config setObject:@"foo" forKey:@"foo"];
-		[Config setObject:@"bar" forKey:@"bar"];
-		expect([((NSString*)[Config objectForKey:@"foo"]) isEqualToString:@"foo"]).to.beTruthy();
-		expect([((NSString*)[Config objectForKey:@"bar"]) isEqualToString:@"bar"]).to.beTruthy();
+		[AppConfig setObject:@"foo" forKey:@"foo"];
+		[AppConfig setObject:@"bar" forKey:@"bar"];
+		expect([((NSString*)[AppConfig objectForKey:@"foo"]) isEqualToString:@"foo"]).to.beTruthy();
+		expect([((NSString*)[AppConfig objectForKey:@"bar"]) isEqualToString:@"bar"]).to.beTruthy();
 	});
 	
 	it(@"restore", ^{
-		expect([((NSString*)[Config objectForKey:@"foo"]) isEqualToString:@"foo"]).to.beTruthy();
-		expect([((NSString*)[Config objectForKey:@"bar"]) isEqualToString:@"bar"]).to.beTruthy();
+		expect([((NSString*)[AppConfig objectForKey:@"foo"]) isEqualToString:@"foo"]).to.beTruthy();
+		expect([((NSString*)[AppConfig objectForKey:@"bar"]) isEqualToString:@"bar"]).to.beTruthy();
 	});
 	
 	it(@"reset", ^{
-		[Config removeAllObjects];
-		expect([((NSString*)[Config objectForKey:@"foo"]) isEqualToString:@"foo"]).to.beFalsy();
-		expect([((NSString*)[Config objectForKey:@"bar"]) isEqualToString:@"bar"]).to.beFalsy();
+		[AppConfig removeAllObjects];
+		expect([((NSString*)[AppConfig objectForKey:@"foo"]) isEqualToString:@"foo"]).to.beFalsy();
+		expect([((NSString*)[AppConfig objectForKey:@"bar"]) isEqualToString:@"bar"]).to.beFalsy();
 	});
 	
 });

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Config : NSObject
+@interface AppConfig : NSObject
 
 +(instancetype) sharedInstance;
 +(void)setObject:(id)anObject forKey:(NSString*)aKey;

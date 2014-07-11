@@ -11,7 +11,7 @@
 #define EXP_SHORTHAND
 #import "Expecta.h"
 #import "AppUtils.h"
-#import "Config.h"
+#import "AppConfig.h"
 
 SpecBegin(UtilsTest)
 
