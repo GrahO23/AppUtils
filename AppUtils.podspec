@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         =  'AppUtils'
-  s.version      =  '0.0.1'
+  s.version      =  '0.1.1'
   s.platform     =  :ios
   s.author       =  'Graham Oldfield'
   s.license      = { :type => 'Apache 2.0', :file => 'LICENSE' }

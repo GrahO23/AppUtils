@@ -7,7 +7,7 @@
 //
 
 #import "Config.h"
-#import "Utils.h"
+#import "AppUtils.h"
 
 static Config *_sharedInstance = nil;
 
@@ -34,7 +34,7 @@ static Config *_sharedInstance = nil;
 }
 
 +(NSString*)configPath{
-	return [[Utils docsPath] stringByAppendingPathComponent:@"config.store"];
+	return [[AppUtils docsPath] stringByAppendingPathComponent:@"config.store"];
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder{

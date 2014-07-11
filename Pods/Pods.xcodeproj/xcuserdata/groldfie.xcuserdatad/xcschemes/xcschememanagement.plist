@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-AppUtils-UIAlertView-Blocks.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-AppUtils.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-AppUtilsTests-Expecta.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>9963505E64A34974B7CDA55B</key>
+		<key>25A93BB9F0AA40E2BD85B36B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AD8298EC73194E8DBC038657</key>
+		<key>5EFF863F7EDF4A7FA236BE21</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C73C80BCA3594B94BCD99790</key>
+		<key>63738A28C2134D2F938ABA36</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>71EA37DA46EE477DB0545DF5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7F22D3C8AB7743DFAB31AF83</key>
 		<dict>
 			<key>primary</key>
 			<true/>

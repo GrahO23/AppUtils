@@ -2,6 +2,7 @@
 # platform :ios, "6.0"
 
 target "AppUtils" do
+  pod 'UIAlertView-Blocks', '~> 1.0'
 
 end
 
