@@ -10,6 +10,11 @@
 
 @implementation Utils
 
++(NSString*)docsPath{
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	return [paths firstObject];
+}
+
 +(NSString*)prettyPrint:(NSDate*)date{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];

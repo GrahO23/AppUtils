@@ -16,10 +16,11 @@
 		81C1C672196FD80C009AA1D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C1C671196FD80C009AA1D5 /* UIKit.framework */; };
 		81C1C675196FD80C009AA1D5 /* libAppUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C1C65D196FD80C009AA1D5 /* libAppUtils.a */; };
 		81C1C67B196FD80C009AA1D5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81C1C679196FD80C009AA1D5 /* InfoPlist.strings */; };
-		81C1C67D196FD80C009AA1D5 /* AppUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C1C67C196FD80C009AA1D5 /* AppUtilsTests.m */; };
 		81C1C687196FD8B0009AA1D5 /* AppUtils.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 81C1C686196FD8B0009AA1D5 /* AppUtils.podspec */; };
 		81C1C68A196FD93C009AA1D5 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C1C689196FD93C009AA1D5 /* Utils.m */; };
 		81C1C68D196FD9DE009AA1D5 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C1C68C196FD9DE009AA1D5 /* Config.m */; };
+		81C1C691196FF073009AA1D5 /* ConfigTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C1C690196FF073009AA1D5 /* ConfigTests.m */; };
+		81C1C693196FF487009AA1D5 /* UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C1C692196FF487009AA1D5 /* UtilsTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,12 +58,13 @@
 		81C1C671196FD80C009AA1D5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		81C1C678196FD80C009AA1D5 /* AppUtilsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppUtilsTests-Info.plist"; sourceTree = "<group>"; };
 		81C1C67A196FD80C009AA1D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		81C1C67C196FD80C009AA1D5 /* AppUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppUtilsTests.m; sourceTree = "<group>"; };
 		81C1C686196FD8B0009AA1D5 /* AppUtils.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppUtils.podspec; sourceTree = SOURCE_ROOT; };
 		81C1C688196FD93C009AA1D5 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		81C1C689196FD93C009AA1D5 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		81C1C68B196FD9DD009AA1D5 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		81C1C68C196FD9DE009AA1D5 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
+		81C1C690196FF073009AA1D5 /* ConfigTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigTests.m; sourceTree = "<group>"; };
+		81C1C692196FF487009AA1D5 /* UtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilsTest.m; sourceTree = "<group>"; };
 		9375FD0FD47145839168A7A4 /* libPods-AppUtilsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppUtilsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,7 +97,6 @@
 			children = (
 				81C1C662196FD80C009AA1D5 /* AppUtils */,
 				81C1C676196FD80C009AA1D5 /* AppUtilsTests */,
-				81C1C65F196FD80C009AA1D5 /* Frameworks */,
 				81C1C65E196FD80C009AA1D5 /* Products */,
 				060EB786A1F149E39D8C95E4 /* Pods-AppUtilsTests.xcconfig */,
 			);
@@ -119,6 +120,7 @@
 				9375FD0FD47145839168A7A4 /* libPods-AppUtilsTests.a */,
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		81C1C662196FD80C009AA1D5 /* AppUtils */ = {
@@ -147,7 +149,9 @@
 		81C1C676196FD80C009AA1D5 /* AppUtilsTests */ = {
 			isa = PBXGroup;
 			children = (
-				81C1C67C196FD80C009AA1D5 /* AppUtilsTests.m */,
+				81C1C690196FF073009AA1D5 /* ConfigTests.m */,
+				81C1C692196FF487009AA1D5 /* UtilsTest.m */,
+				81C1C65F196FD80C009AA1D5 /* Frameworks */,
 				81C1C677196FD80C009AA1D5 /* Supporting Files */,
 			);
 			path = AppUtilsTests;
@@ -289,7 +293,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81C1C67D196FD80C009AA1D5 /* AppUtilsTests.m in Sources */,
+				81C1C691196FF073009AA1D5 /* ConfigTests.m in Sources */,
+				81C1C693196FF487009AA1D5 /* UtilsTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@
 
 @interface Utils : NSObject
 
++(NSString*)docsPath;
 +(NSString*)prettyPrint:(NSDate*)date;
 /*
  * +/- days from start date

@@ -10,6 +10,9 @@
 
 @interface Config : NSObject
 
-+(NSString*)docsPath;
-
++(instancetype) sharedInstance;
++(void)setObject:(id)anObject forKey:(NSString*)aKey;
++(instancetype)objectForKey:(NSString*)key;
++(void)removeObjectforKey:(NSString*)aKey;
++(void)removeAllObjects;
 @end

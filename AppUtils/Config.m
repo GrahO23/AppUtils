@@ -7,11 +7,12 @@
 //
 
 #import "Config.h"
+#import "Utils.h"
 
 static Config *_sharedInstance = nil;
 
 @interface Config()<NSCoding>
-@property NSMutableDictionary* configDictionary;
+@property (strong ,nonatomic) NSMutableDictionary* configDictionary;
 
 @end
 
@@ -32,16 +33,9 @@ static Config *_sharedInstance = nil;
     return _sharedInstance;
 }
 
-
-+(NSString*)docsPath{
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	return [paths firstObject];
-}
-
 +(NSString*)configPath{
-	return [[Config docsPath] stringByAppendingPathComponent:@"config.store"];
+	return [[Utils docsPath] stringByAppendingPathComponent:@"config.store"];
 }
-
 
 - (void)encodeWithCoder:(NSCoder *)aCoder{
 	[aCoder encodeObject:self.configDictionary forKey:@"configDictionary"];
@@ -60,13 +54,37 @@ static Config *_sharedInstance = nil;
 	self = [super init];
 	if(self){
 		self.configDictionary = [aDecoder decodeObjectForKey:@"configDictionary"];
+		if(self.configDictionary == nil){
+			self.configDictionary = [[NSMutableDictionary alloc]init];
+		}
 	}
 	return self;
 }
 
++(void)removeObjectforKey:(NSString*)aKey{
+	[[Config sharedInstance].configDictionary removeObjectForKey:aKey];
+	[Config save];
+}
+
++(void)removeAllObjects{
+	[[Config sharedInstance].configDictionary removeAllObjects];
+	[Config save];
+}
+
++(void)setObject:(id)anObject forKey:(NSString*)aKey{
+	Config* conf = [Config sharedInstance];
+	[conf.configDictionary  setObject:anObject forKey:aKey];
+	[Config save];
+}
+
++(instancetype)objectForKey:(NSString*)key{
+	Config* conf = [Config sharedInstance];
+	return  [conf.configDictionary objectForKey:key];
+}
 
 +(void)save{
-
+	Boolean saved = [NSKeyedArchiver archiveRootObject:[Config sharedInstance] toFile:[Config configPath]];
+	NSLog(@"Config save: %d",saved);
 }
 
 
