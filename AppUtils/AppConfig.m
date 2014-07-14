@@ -79,11 +79,13 @@ static AppConfig *_sharedInstance = nil;
 
 +(id)objectForKey:(NSString*)key{
 	AppConfig* conf = [AppConfig sharedInstance];
-	return  [conf.configDictionary objectForKey:key];
+	id obj = [conf.configDictionary objectForKey:key];
+	return  obj;
 }
 
 +(void)save{
-	Boolean saved = [NSKeyedArchiver archiveRootObject:[AppConfig sharedInstance] toFile:[AppConfig configPath]];
+	AppConfig* conf = [AppConfig sharedInstance];
+	Boolean saved = [NSKeyedArchiver archiveRootObject:conf toFile:[AppConfig configPath]];
 	NSLog(@"Config save: %d",saved);
 }
 
