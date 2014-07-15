@@ -18,9 +18,8 @@ static AppConfig *_sharedInstance = nil;
 
 @implementation AppConfig
 
-+ (instancetype) sharedInstance{
-    static dispatch_once_t oncePredicate;
-    dispatch_once(&oncePredicate, ^{
++ (id) sharedInstance{
+    if(_sharedInstance==nil){
 		NSData * data = [NSData dataWithContentsOfFile:[AppConfig configPath]];
 		if(data!=nil){
 			_sharedInstance = [NSKeyedUnarchiver unarchiveObjectWithData:data];
@@ -29,7 +28,7 @@ static AppConfig *_sharedInstance = nil;
 			_sharedInstance = [[AppConfig alloc]init];
 		}
 		
-    });
+    }
     return _sharedInstance;
 }
 
@@ -45,7 +44,7 @@ static AppConfig *_sharedInstance = nil;
 -(id)init{
 	self = [super init];
 	if(self){
-		self.configDictionary = [NSMutableDictionary alloc];
+		self.configDictionary = [[NSMutableDictionary alloc]init];
 	}
 	return self;
 }
@@ -62,25 +61,30 @@ static AppConfig *_sharedInstance = nil;
 }
 
 +(void)removeObjectforKey:(NSString*)aKey{
-	[[AppConfig sharedInstance].configDictionary removeObjectForKey:aKey];
+	[((AppConfig*)[AppConfig sharedInstance]).configDictionary removeObjectForKey:aKey];
 	[AppConfig save];
 }
 
 +(void)removeAllObjects{
-	[[AppConfig sharedInstance].configDictionary removeAllObjects];
+	[((AppConfig*)[AppConfig sharedInstance]).configDictionary removeAllObjects];
 	[AppConfig save];
 }
 
 +(void)setObject:(id)anObject forKey:(NSString*)aKey{
-	AppConfig* conf = [AppConfig sharedInstance];
-	[conf.configDictionary  setObject:anObject forKey:aKey];
+    [[AppConfig sharedInstance]_setObject:anObject forKey:aKey];
 	[AppConfig save];
 }
 
+-(void)_setObject:(id)anObject forKey:(NSString*)aKey{
+    return [self.configDictionary setObject:anObject forKey:aKey];
+}
+
 +(id)objectForKey:(NSString*)key{
-	AppConfig* conf = [AppConfig sharedInstance];
-	id obj = [conf.configDictionary objectForKey:key];
-	return  obj;
+	return  [[AppConfig sharedInstance] _objectForKey:key];
+}
+
+-(id)_objectForKey:(NSString*)key{
+    return [self.configDictionary  objectForKey:key];
 }
 
 +(void)save{
