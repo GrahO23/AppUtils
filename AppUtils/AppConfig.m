@@ -26,7 +26,7 @@ static AppConfig *_sharedInstance = nil;
 			_sharedInstance = [NSKeyedUnarchiver unarchiveObjectWithData:data];
 		}
 		else{
-			_sharedInstance = [AppConfig alloc];
+			_sharedInstance = [[AppConfig alloc]init];
 		}
 		
     });
