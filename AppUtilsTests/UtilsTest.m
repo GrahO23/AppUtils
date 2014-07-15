@@ -37,6 +37,10 @@ describe(@"Utils Test", ^{
 	it(@"pretty Print", ^{
 		expect([AppUtils prettyPrint:[NSDate date]]).toNot.beNil();
 	});
+    
+    it(@"pretty Print", ^{
+		expect([AppUtils dateToISO8601:[NSDate date]]).toNot.beNil();
+	});
 	
 	it(@"Time plus 1 hour", ^{
 		NSDate* current = [NSDate date];

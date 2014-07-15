@@ -12,6 +12,7 @@
 
 +(NSString*)docsPath;
 +(NSString*)prettyPrint:(NSDate*)date;
++(NSString*)dateToISO8601:(NSDate*)date;
 /*
  * +/- days from start date
  */
