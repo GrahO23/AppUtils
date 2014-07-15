@@ -8,7 +8,6 @@
 
 #import "AppUtils.h"
 #import "UIAlertView+Blocks.h"
-#import "ISO8601DateFormatter.h"
 
 @implementation AppUtils
 
@@ -24,15 +23,11 @@
 }
 
 +(NSString*)dateToISO8601:(NSDate*)date{
-    
-    ISO8601DateFormatter *formatter = [[ISO8601DateFormatter alloc] init];
-    NSString *dateString = [formatter stringFromDate: date];
-//    
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
-//    [dateFormatter setLocale:enUSPOSIXLocale];
-//    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
-    return dateString;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+    [dateFormatter setLocale:enUSPOSIXLocale];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
+    return [dateFormatter stringFromDate:date];
 }
 
 +(NSDate*)daysFromDate:(NSDate*)startDate operandDays:(NSInteger)operandDays{
