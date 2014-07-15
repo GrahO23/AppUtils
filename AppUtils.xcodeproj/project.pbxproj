@@ -20,6 +20,7 @@
 		81C1C691196FF073009AA1D5 /* ConfigTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C1C690196FF073009AA1D5 /* ConfigTests.m */; };
 		81C1C693196FF487009AA1D5 /* UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C1C692196FF487009AA1D5 /* UtilsTest.m */; };
 		81C1C695196FFCD5009AA1D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C1C694196FFCD5009AA1D5 /* UIKit.framework */; };
+		BF311AF5197574D400EDF1C1 /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = BF311AF4197574D400EDF1C1 /* ISO8601DateFormatter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FDB69AAD8FE14164A96E4976 /* libPods-AppUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 938D522901414A6D95054E3B /* libPods-AppUtils.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,8 @@
 		81C1C694196FFCD5009AA1D5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9375FD0FD47145839168A7A4 /* libPods-AppUtilsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppUtilsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		938D522901414A6D95054E3B /* libPods-AppUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF311AF3197574D400EDF1C1 /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISO8601DateFormatter.h; path = AppUtils/ISO8601DateFormatter.h; sourceTree = "<group>"; };
+		BF311AF4197574D400EDF1C1 /* ISO8601DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISO8601DateFormatter.m; path = AppUtils/ISO8601DateFormatter.m; sourceTree = "<group>"; };
 		E0D7EE82512A40E8A51909C4 /* Pods-AppUtils.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppUtils.xcconfig"; path = "Pods/Pods-AppUtils.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +108,8 @@
 		81C1C654196FD80C009AA1D5 = {
 			isa = PBXGroup;
 			children = (
+				BF311AF3197574D400EDF1C1 /* ISO8601DateFormatter.h */,
+				BF311AF4197574D400EDF1C1 /* ISO8601DateFormatter.m */,
 				81C1C694196FFCD5009AA1D5 /* UIKit.framework */,
 				81C1C662196FD80C009AA1D5 /* AppUtils */,
 				81C1C676196FD80C009AA1D5 /* AppUtilsTests */,
@@ -327,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81C1C68D196FD9DE009AA1D5 /* AppConfig.m in Sources */,
+				BF311AF5197574D400EDF1C1 /* ISO8601DateFormatter.m in Sources */,
 				81C1C68A196FD93C009AA1D5 /* AppUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
