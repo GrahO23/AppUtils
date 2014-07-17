@@ -19,6 +19,9 @@
 
 +(NSDate*)hoursMinutesFromDate:(NSDate*)startDate operandHours:(NSInteger)operandHours operandMins:(NSInteger)operandMins;
 +(NSDate*)daysFromDate:(NSDate*)startDate operandDays:(NSInteger)operandDays;
++(NSDate *)beginningOfDay:(NSDate *)date;
++(NSDate *)endOfDay:(NSDate *)date;
+
 //Guarenteed to be called on ui-thread
 +(void)showAlert:(NSString*)title withDescrip:(NSString*)body;
 +(void)openExternalURL:(NSString*)url;

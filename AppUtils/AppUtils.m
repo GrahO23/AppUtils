@@ -45,6 +45,33 @@
 	return [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents toDate:startDate options:0];
 }
 
+
++(NSDate *)beginningOfDay:(NSDate *)date
+{
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDateComponents *components = [cal components:( NSMonthCalendarUnit | NSYearCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) fromDate:date];
+	
+    [components setHour:0];
+    [components setMinute:0];
+    [components setSecond:0];
+	
+    return [cal dateFromComponents:components];
+	
+}
+
++(NSDate *)endOfDay:(NSDate *)date
+{
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDateComponents *components = [cal components:(  NSMonthCalendarUnit | NSYearCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit ) fromDate:date];
+	
+    [components setHour:23];
+    [components setMinute:59];
+    [components setSecond:59];
+	
+    return [cal dateFromComponents:components];
+	
+}
+
 +(void)showAlert:(NSString*)title withDescrip:(NSString*)body{
 	dispatch_async(dispatch_get_main_queue(),
 				   ^{
