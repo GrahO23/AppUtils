@@ -17,13 +17,17 @@
 }
 
 +(NSString*)prettyPrint:(NSDate*)date{
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-	[formatter setDateFormat:@"YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"];
-    return [formatter stringFromDate:date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+    [dateFormatter setTimeZone:timeZone];
+	[dateFormatter setDateFormat:@"YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    return [dateFormatter stringFromDate:date];
 }
 
 +(NSString*)dateToISO8601:(NSDate*)date{
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+    [dateFormatter setTimeZone:timeZone];
 	[dateFormatter setDateFormat:@"YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"];
     return [dateFormatter stringFromDate:date];
 }
